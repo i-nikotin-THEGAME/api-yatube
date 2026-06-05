@@ -116,3 +116,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+
+API_VERSION = 'v1'

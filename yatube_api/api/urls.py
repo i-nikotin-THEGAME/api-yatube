@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
@@ -16,6 +17,6 @@ router.register(
     basename="comments")
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path("api-token-auth/", obtain_auth_token, name="api_token_auth"),
+    path(f'{settings.API_VERSION}/', include(router.urls)),
+    path(f'{settings.API_VERSION}/api-token-auth/', obtain_auth_token, name="api_token_auth"),
 ]
